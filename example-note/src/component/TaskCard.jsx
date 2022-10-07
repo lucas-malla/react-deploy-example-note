@@ -1,5 +1,9 @@
+import {TaskContext} from './context/TaskContext';
+import {useContext} from 'react';
 
-function TaskCard({task, deliteTask}) {
+function TaskCard({task}) {
+  const {deliteTask} = useContext(TaskContext);
+
   return (
         <di>
             <h1>{task.title}</h1>
@@ -11,4 +15,4 @@ function TaskCard({task, deliteTask}) {
   )
 }
 
-export default TaskCard
+export default TaskCard;

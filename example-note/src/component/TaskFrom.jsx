@@ -1,8 +1,10 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
+import {TaskContext} from './context/TaskContext'; 
 
-function TaskFrom({createTask}) {
+function TaskFrom() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
+    const {createTask} = useContext(TaskContext);
     
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -12,7 +14,7 @@ function TaskFrom({createTask}) {
         })
         setTitle('')
         setDescription('')
-    }
+    };
   return (
     <>
         <form onSubmit={handleSubmit}>
@@ -31,4 +33,4 @@ function TaskFrom({createTask}) {
   )
 }
 
-export default TaskFrom
+export default TaskFrom;
